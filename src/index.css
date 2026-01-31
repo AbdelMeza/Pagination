@@ -1,0 +1,28 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Main font";
+  src: url('../Font/main-font.otf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  background: none;
+  box-sizing: border-box;
+  font-family: "Main font";
+}
