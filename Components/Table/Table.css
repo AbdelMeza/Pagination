@@ -1,0 +1,40 @@
+.data-table {
+    width: 90vw;
+    border: 1px solid #ffffff33;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+.data-table .column {
+    flex: 1;
+
+
+}
+
+.column:nth-child(1) {
+    flex: 0.5;
+}
+
+.data-table .column .column-header {
+    background-color: #222;
+    padding: 12px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #ffffff33;
+    color: #ffffffae;
+}
+
+.data-table .column .column-data {
+    background-color: #111;
+    color: #fff;
+    padding: 0 15px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.data-table .column .column-data .data {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
