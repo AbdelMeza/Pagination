@@ -1,6 +1,6 @@
 .data-table {
     width: 90vw;
-    border: 1px solid #ffffff33;
+    border: 1px solid #ffffff16;
     border-radius: 10px;
     display: flex;
     overflow: hidden;
@@ -8,8 +8,6 @@
 
 .data-table .column {
     flex: 1;
-
-
 }
 
 .column:nth-child(1) {
@@ -20,7 +18,7 @@
     background-color: #222;
     padding: 12px;
     font-size: 0.8rem;
-    border-bottom: 1px solid #ffffff33;
+    border-bottom: 1px solid #ffffff16;
     color: #ffffffae;
 }
 
