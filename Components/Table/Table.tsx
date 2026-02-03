@@ -10,7 +10,6 @@ interface TableContainerProps {
 export default function TableContainer({ hasPagination }: TableContainerProps) {
   const [searchParams] = useSearchParams()
     
-  const totalItems = data["ID"].length
   const page = parseInt(searchParams.get("page") || "1", 10)
   const limit = parseInt(searchParams.get("limit") || "10", 10)
 
