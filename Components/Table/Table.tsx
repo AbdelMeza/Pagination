@@ -1,8 +1,22 @@
+import { useSearchParams } from "react-router-dom"
 import { data } from "../../Data/Data"
 import Pagination from "../Pagination/Pagination"
 import "./Table.css"
 
-export default function TableContainer({ hasPagination }: { hasPagination: boolean }) {
+interface TableContainerProps {
+  hasPagination: boolean
+}
+
+export default function TableContainer({ hasPagination }: TableContainerProps) {
+  const [searchParams] = useSearchParams()
+    
+  const totalItems = data["ID"].length
+  const page = parseInt(searchParams.get("page") || "1", 10)
+  const limit = parseInt(searchParams.get("limit") || "10", 10)
+
+  const startIndex = (page - 1) * limit
+  const endIndex = startIndex + limit
+
   return (
     <>
       <div className="data-table">
@@ -11,15 +25,18 @@ export default function TableContainer({ hasPagination }: { hasPagination: boole
             <div className="column-header">{key}</div>
 
             <div className="column-data">
-              {data[key as keyof typeof data].map((value, index) => (
-                <span key={index} className="data">
-                  {value}
-                </span>
-              ))}
+              {data[key as keyof typeof data]
+                .slice(startIndex, endIndex)
+                .map((value, index) => (
+                  <span key={index + startIndex} className="data">
+                    {value}
+                  </span>
+                ))}
             </div>
           </div>
         ))}
       </div>
+
       {hasPagination && <Pagination />}
     </>
   )
